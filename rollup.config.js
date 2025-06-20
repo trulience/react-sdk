@@ -4,10 +4,12 @@ import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import dts from 'rollup-plugin-dts';
-import { URL } from 'url'
+import { URL } from 'url';
 
 import { readFileSync } from 'fs';
-const packageJson = JSON.parse(readFileSync(new URL('./package.json', import.meta.url)));
+const packageJson = JSON.parse(
+  readFileSync(new URL('./package.json', import.meta.url))
+);
 
 export default [
   {
@@ -16,12 +18,12 @@ export default [
       {
         file: packageJson.main,
         format: 'cjs',
-        sourcemap: true,
+        sourcemap: false,
       },
       {
         file: packageJson.module,
         format: 'esm',
-        sourcemap: true,
+        sourcemap: false,
       },
     ],
     plugins: [
@@ -36,6 +38,7 @@ export default [
       }),
       terser(),
     ],
+    external: ['react', 'react-dom'], // avoid bundling peer deps
   },
   {
     input: 'dist/index.d.ts',

@@ -1,3 +1,2 @@
-export function addTwoNumber(a: number, b: number) {
-  return a + b;
-}
+export { default as TrulienceSDK } from './default';
+export { default as TrulienceAvatar } from './TrulienceAvatar';

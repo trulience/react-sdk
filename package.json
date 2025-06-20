@@ -1,14 +1,17 @@
 {
   "name": "@trulience/react-sdk",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
+  "version": "1.0.93",
+  "description": "React SDK for embedding and interacting with Trulience avatars.",
+  "type": "module",
+  "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
-  "files": [
-    "dist"
-  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -28,6 +31,7 @@
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.3",
+    "@types/node": "^24.0.3",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@typescript-eslint/eslint-plugin": "^8.34.1",
@@ -43,20 +47,18 @@
     "rollup": "^4.44.0",
     "rollup-plugin-dts": "^6.2.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "tslib": "^2.8.1"
   },
   "peerDependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react": ">=16.11.0",
+    "react-dom": ">=16.11.0"
   },
   "keywords": [
     "react",
     "component",
     "library"
   ],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "tslib": "^2.8.1"
-  }
+  "author": "trulience",
+  "license": "MIT"
 }
