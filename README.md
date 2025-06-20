@@ -1,2 +1,3 @@
-# react-sdk
+# @trulience/react-sdk
+
 Trulience React SDK
