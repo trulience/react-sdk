@@ -13,7 +13,7 @@ function App() {
 
   const avatarId = useMemo(() => {
     const params = new URLSearchParams(window.location.search);
-    return params.get("avatarId") || "demo-avatar-123";
+    return params.get("avatarId");
   }, []);
 
   // Event callbacks from the Trulience SDK
@@ -286,6 +286,15 @@ function App() {
       borderColor: '#fecaca'
     })
   } as const;
+
+  if (!avatarId) {
+    return (
+      <div style={{ textAlign: "center", paddingTop: "50px" }}>
+        <h2>Missing avatarId</h2>
+        <p>Please provide <code>?avatarId=YOUR_ID</code> in the URL.</p>
+      </div>
+    );
+  }
 
   return (
     <div style={styles.container}>
