@@ -14,24 +14,25 @@ export interface TrulienceAvatarProps {
   autoConnect?: boolean;
   prefetchAvatar?: boolean;
 
-  username?: string,
-  enableAvatar?: boolean,
-  retry?: any
+  username?: string;
+  enableAvatar?: boolean;
+  retry?: any;
 
-  mediaStream?: MediaStream
+  mediaStream?: MediaStream;
 
-  style?: React.CSSProperties
+  style?: React.CSSProperties;
 }
-
 
 interface TrulienceAvatarState {
-  trulience: any,
-  mediaStreamObj?: MediaStream | null,
-  localMediaStreamObj?: MediaStream | null
+  trulience: any;
+  mediaStreamObj?: MediaStream | null;
+  localMediaStreamObj?: MediaStream | null;
 }
 
-
-class TrulienceAvatar extends React.Component<TrulienceAvatarProps, TrulienceAvatarState> {
+class TrulienceAvatar extends React.Component<
+  TrulienceAvatarProps,
+  TrulienceAvatarState
+> {
   state: TrulienceAvatarState = {
     trulience: null,
     mediaStreamObj: null,
@@ -57,7 +58,10 @@ class TrulienceAvatar extends React.Component<TrulienceAvatarProps, TrulienceAva
     }
 
     // Register for the notifications
-    this.state.trulience.on('auth-success', this.#authSuccessHandler.bind(this));
+    this.state.trulience.on(
+      'auth-success',
+      this.#authSuccessHandler.bind(this)
+    );
     this.state.trulience.on('auth-fail', this.#authFailHandler.bind(this));
     this.state.trulience.on(
       'websocket-connect',
@@ -227,7 +231,7 @@ class TrulienceAvatar extends React.Component<TrulienceAvatarProps, TrulienceAva
       remoteVideo: this.remoteVideoId,
     };
 
-    let url = this.props.url ?? "https://trulience.com/sdk/trulience.sdk.js";
+    let url = this.props.url ?? 'https://trulience.com/sdk/trulience.sdk.js';
     let details = {
       avatarId: this.props.avatarId,
       token: this.props.token,
@@ -247,10 +251,7 @@ class TrulienceAvatar extends React.Component<TrulienceAvatarProps, TrulienceAva
         this.setState({ trulience: trulienceObj });
       })
       .catch((error) => {
-        console.error(
-          'Failed to create trulience object with url = ' + url + '. Error = ',
-          error
-        );
+        console.error(`Failed to create trulience object with url = ${url}. Error = `, error);
       });
   }
 
@@ -266,7 +267,7 @@ class TrulienceAvatar extends React.Component<TrulienceAvatarProps, TrulienceAva
           width: this.props.width ?? '100%',
           height: this.props.height ?? '100%',
           backgroundColor: this.props.backgroundColor ?? '#333',
-          ...this.props.style
+          ...this.props.style,
         }}
       >
         <div
