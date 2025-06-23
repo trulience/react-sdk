@@ -8,7 +8,7 @@ This package contains the Trulience React SDK component used to embed avatars in
 
 ```bash
 git clone https://github.com/trulience/react-sdk.git
-cd trulience-react-sdk
+cd react-sdk
 
 pnpm install
 ```
@@ -21,7 +21,6 @@ Before linking, make sure the SDK is built and outputs both ESM and CJS modules:
 
 ```bash
 pnpm build
-pnpm run dev
 ```
 
 > This should generate files inside the `dist/` folder such as `index.js`, `index.cjs`, and `index.d.ts`.
@@ -40,8 +39,10 @@ pnpm link --global
 
 Go to your React app that will use the SDK:
 
+- For running example code
+
 ```bash
-cd ../your-react-app
+cd example
 pnpm link --global @trulience/react-sdk
 ```
 
@@ -70,5 +71,5 @@ pnpm pack
 This creates a `.tgz` file. Then install it manually in your consumer app:
 
 ```bash
-pnpm add ../trulience-react-sdk/trulience-react-sdk-1.0.0.tgz
+pnpm add ../trulience-react-sdk/trulience-react-sdk-x.x.x.tgz
 ```
