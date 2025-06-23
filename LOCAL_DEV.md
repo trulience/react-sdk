@@ -7,7 +7,7 @@ This package contains the Trulience React SDK component used to embed avatars in
 ### 📦 1. Clone and Setup the SDK
 
 ```bash
-git clone https://github.com/your-org/trulience-react-sdk.git
+git clone https://github.com/trulience/react-sdk.git
 cd trulience-react-sdk
 
 pnpm install

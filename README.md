@@ -50,7 +50,7 @@ Available methods on the Trulience object:
 | `isMicEnabled()`             | Check if mic is enabled (returns `boolean`)                |
 | `isSpeakerEnabled()`         | Check if speaker is enabled (returns `boolean`)            |
 
-👉 Refer to the [Trulience SDK Docs – Methods](https://docs.trulience.com/docs/advanced/sdk#trulience-class-methods) for more details.
+👉 Refer to the [Trulience SDK Docs – Methods](https://docs.trulience.com/docs/developer/sdk#trulience-class-methods) for more details.
 
 ---
 
@@ -71,7 +71,7 @@ You can register callbacks for important events using the `eventCallbacks` prop.
 | `load-progress`        | Avatar scene loading progress  | JSON object with progress info  |
 | `avatar-status-update` | Avatar state has changed       | AvatarStatus value              |
 
-👉 Refer to the [Trulience SDK Docs – Events](https://docs.trulience.com/docs/advanced/sdk#events-system) for a full list of supported events.
+👉 Refer to the [Trulience SDK Docs – Events](https://docs.trulience.com/docs/developer/sdk#events-system) for a full list of supported events.
 
 ---
 
