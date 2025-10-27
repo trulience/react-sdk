@@ -136,4 +136,4 @@ To run and link this package locally, follow the instructions in [LOCAL_DEV.md](
 
 ## 📁 Sample Projects
 
-Refer to the [Sample Code Repository](https://github.com/trulience/react-sdk-sample) for a complete integration example.
+Refer to the [Sample Code Repository](https://github.com/trulience/integration-examples) for a complete integration example.
